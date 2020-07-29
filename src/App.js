@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
-import SearchMovie from './components/SearchMovie';
+import React, { useState } from "react";
+import SearchMovie from "./components/SearchMovie";
+import MovieCards from "./components/MovieCards";
+import { Grid } from "@material-ui/core";
 
-const apiUrl = "https://api-repuesto.herokuapp.com/";
-
+const apiUrl =
+  "https://cors-anywhere.herokuapp.com/https://api-repuesto.herokuapp.com/movies/";
 
 function App() {
   const [search, setSearch] = useState(false);
@@ -10,7 +12,7 @@ function App() {
 
   const getMovies = async (values, setDisableButton) => {
     setSearch(false);
-    const api_url = `${apiUrl}${values.searchCriteria}/${values.searchValues}`;
+    const api_url = `${apiUrl}${values.searchCriteria}/${values.search}`;
 
     const api_call = await fetch(api_url, {
       method: "GET",
@@ -18,25 +20,44 @@ function App() {
 
     const data = await api_call.json();
 
-    if(data.status === "OK" && values.searchCriteria === "id_pelicula") {
-      setMovies([data.movie]);
-      setSearch(true);
-      setDisableButton(false);
-    }else if( data.status === "OK"){
+    if (data.status === "OK") {
       setMovies(data.movies);
       setSearch(true);
       setDisableButton(false);
     } else {
-      setMovies([]);
-      setSearch(true);
       setDisableButton(false);
     }
   };
 
   return (
-    <SearchMovie getMovies={getMovies}/>
+    <React.Fragment>
+      <SearchMovie getMovies={getMovies} />
+      <Grid
+        container
+        justify="center"
+        spacing={4}
+        style={{ marginTop: "16px" }}
+      >
+        {search && movies.length > 0 ? (
+          movies.map((movie) => (
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={4}
+              lg={3}
+              xl={3}
+              key={movie.id_pelicula}
+            >
+              <MovieCards movie={movie} />
+            </Grid>
+          ))
+        ) : search ? (
+          <div>No se encontraron películas</div>
+        ) : null}
+      </Grid>
+    </React.Fragment>
   );
-
 }
 
 export default App;
