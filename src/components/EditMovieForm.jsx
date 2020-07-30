@@ -28,8 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const apiUrl =
-  "https://cors-anywhere.herokuapp.com/https://api-repuesto.herokuapp.com/movies/editMovie/";
+const apiUrl = "https://api-repuesto.herokuapp.com/movies/editMovie/";
 
 const EditMovieForms = ({ movie }) => {
   const classes = useStyles();

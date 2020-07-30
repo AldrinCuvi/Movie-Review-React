@@ -3,8 +3,7 @@ import SearchMovie from "./components/SearchMovie";
 import MovieCards from "./components/MovieCards";
 import { Grid } from "@material-ui/core";
 
-const apiUrl =
-  "https://cors-anywhere.herokuapp.com/https://api-repuesto.herokuapp.com/movies/";
+const apiUrl = "https://api-repuesto.herokuapp.com/movies/";
 
 function App() {
   const [search, setSearch] = useState(false);
