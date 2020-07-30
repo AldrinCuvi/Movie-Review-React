@@ -41,7 +41,7 @@ const EditMovieForms = ({ movie }) => {
     director: movie.director_pelicula,
     duracion: movie.duracion_pelicula,
     genero: movie.genero_pelicula,
-    anio: movie.anio_estreno_pelicula,
+    anio: String(movie.anio_estreno_pelicula),
     calificacion: String(movie.calificacion_pelicula),
     clasificacion: movie.clasificacion_pelicula,
   });
