@@ -15,7 +15,7 @@ const Routes = () => {
       <Route path="/movies/editMovie/:id_pelicula" component={EditMovie} exact />
       <Route path="/movies/:id_pelicula" component={Movie} exact />
     </Switch>
-  );
+  );  
 };
 
 export default Routes;

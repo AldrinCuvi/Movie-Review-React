@@ -20,10 +20,10 @@ class EditMovie extends React.Component {
 
     render() {
         return ( 
-            <React.Component>
+            <React.Fragment>
                 <NavBar/>
                 <EditMovieForms movie={this.props.location.state.movie}/>
-            </React.Component>
+            </React.Fragment>
         );
     }
 }
