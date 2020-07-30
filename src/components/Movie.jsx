@@ -1,11 +1,13 @@
 import React from "react";
-import NavBar from "./NavBar";
+import NavBar from './NavBar';
+import MovieSchema from "./MovieSchema"
 
 class Movie extends React.Component {
   state = {
     activeMovie: {},
   };
-
+  
+  
   componentDidMount() {
     if (!this.props.location.state) {
       this.props.history.push("/");
@@ -18,10 +20,13 @@ class Movie extends React.Component {
 
   render() {
     return (
-      <div>
-        <NavBar />
-        <div>{this.state.activeMovie.nombre_pelicula}</div>
-      </div>
+      <React.Fragment>
+        <NavBar/>
+        <MovieSchema 
+          movie={this.state.activeMovie}
+          history={this.props.history}
+        />
+      </React.Fragment>
     );
   }
 }

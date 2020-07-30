@@ -13,7 +13,7 @@ import {
   ListItemText,
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import { Menu, Search, Add, Create, Home } from "@material-ui/icons";
+import { Menu, Search, Add, Home } from "@material-ui/icons";
 import Logo from "../assets/movie_review.svg";
 
 const useStyle = makeStyles(() => ({
@@ -62,15 +62,6 @@ function NavBar() {
             <ListItemText primary="Nueva Reseña" />
           </ListItem>
         </Link>
-        {/* <Link to={{ pathname: "/movies/EditMovie" }} className={classes.links}>
-          <ListItem button>
-            <ListItemIcon style={{ color: "white" }}>
-              {" "}
-              <Create />{" "}
-            </ListItemIcon>
-            <ListItemText primary="Modificar Reseña" />
-          </ListItem>
-        </Link> */}
       </List>
     </div>
   );

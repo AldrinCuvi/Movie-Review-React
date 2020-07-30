@@ -53,7 +53,7 @@ function App() {
             </Grid>
           ))
         ) : search ? (
-          <div>No se encontraron películas</div>
+          <div>No encontramos la película que quieres buscar.</div>
         ) : null}
       </Grid>
     </React.Fragment>

@@ -3,7 +3,6 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
 import NewMovie from "./components/NewMovie";
 import EditMovie from "./components/EditMovie";
-import SearchMovie from "./components/SearchMovie";
 import Movie from "./components/Movie";
 import App from "./App";
 
@@ -13,7 +12,7 @@ const Routes = () => {
       <Route exact path="/" component={Home} />
       <Route path="/SearchMovie" component={App} exact />
       <Route path="/movies/NewMovie" component={NewMovie} exact />
-      <Route path="/movies/id_pelicula" component={EditMovie} exact />
+      <Route path="/movies/editMovie/:id_pelicula" component={EditMovie} exact />
       <Route path="/movies/:id_pelicula" component={Movie} exact />
     </Switch>
   );

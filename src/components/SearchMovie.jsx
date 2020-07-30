@@ -1,7 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { TextField, Button, Paper, Grid } from "@material-ui/core";
-import { Link } from "react-router-dom";
 import { Search } from "@material-ui/icons";
 import NavBar from "./NavBar";
 
@@ -54,7 +53,7 @@ const SearchMovie = ({ getMovies }) => {
     if (!form.search.match(/^[0-9a-zA-ZÀ-ÿ\u00f1\u00d1\s]{1,100}$/)) {
       setError({
         isError: true,
-        msg: "El campo no puede estar vacío",
+        msg: "Debes rellenar el campo.",
       });
     } else {
       setDisableButton(true);
