@@ -198,9 +198,7 @@ const NewMovie = () => {
       };
     }
 
-    if (
-      !form.fields.duracion.match(/^[0-9a-zA-ZÀ-ÿ.,;«»"\u00f1\u00d1\s]{1,20}$/)
-    ) {
+    if (!form.fields.duracion.match(/^[0-9]{1}:[0-9]{2}:[0-9]{2}$/)) {
       finalObject.duracion = {
         isError: true,
         msg: "No debes ingresar caracteres especiales.",
